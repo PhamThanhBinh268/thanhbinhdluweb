@@ -1,491 +1,215 @@
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-top: 30px;
-}
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-html {
-  color: #333;
-  font-size: 62.5%;
-  font-family: "Open Sans", sans-serif;
-}
-.main {
-  background: #f1f1f1;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-}
-.form {
-  width: 360px;
-  min-height: 100px;
-  padding: 32px 24px;
-  text-align: center;
-  background: #fff;
-  border-radius: 2px;
-  margin: 24px;
-  align-self: center;
-  box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
-}
-.form .heading {
-  font-size: 2rem;
-}
-.form .desc {
-  text-align: center;
-  color: #636d77;
-  font-size: 1.6rem;
-  font-weight: lighter;
-  line-height: 2.4rem;
-  margin-top: 16px;
-  font-weight: 300;
-}
-
-.form-group {
-  display: flex;
-  margin-bottom: 16px;
-  flex-direction: column;
-}
-
-.form-label,
-.form-message {
-  text-align: left;
-}
-
-.form-label {
-  font-weight: 700;
-  padding-bottom: 6px;
-  line-height: 1.8rem;
-  font-size: 1.4rem;
-}
-
-.form-control {
-  height: 40px;
-  padding: 8px 12px;
-  border: 1px solid #b3b3b3;
-  border-radius: 3px;
-  outline: none;
-  font-size: 1.4rem;
-}
-
-.form-control:hover {
-  border-color: #1dbfaf;
-}
-
-.form-group.invalid .form-control {
-  border-color: #f33a58;
-}
-
-.form-group.invalid .form-message {
-  color: #f33a58;
-}
-
-.form-message {
-  font-size: 1.2rem;
-  line-height: 1.6rem;
-  padding: 4px 0 0;
-}
-
-.form-submit {
-  outline: none;
-  background-color: #1dbfaf;
-  margin-top: 12px;
-  padding: 12px 16px;
-  font-weight: 600;
-  color: #fff;
-  border: none;
-  width: 100%;
-  font-size: 14px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.form-submit:hover {
-  background-color: #1ac7b6;
-}
-
-.spacer {
-  margin-top: 36px;
-}
-
-/* General Body Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #f4f4f4;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden; /* Clear floats */
-    padding: 20px 0;
-}
-
-/* Header */
-header {
-    background: #333;
-    color: #fff;
-    padding-top: 20px;
-    min-height: 70px;
-    border-bottom: #0779e4 3px solid;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    padding-bottom: 10px;
-    font-size: 2.2em;
-}
-
-header nav ul {
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-header nav li {
-    margin: 0 15px;
-}
-
-header a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1.1em;
-}
-
-header a:hover {
-    color: #0779e4;
-}
-
-/* Hero Section */
-#hero {
-    background: #0056b3; /* Darker blue background */
-    color: #fff;
-    padding: 80px 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden; /* For any potential background effects */
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2; /* Ensure content is above any background effects */
-}
-
-.profile-img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%; /* Makes it round */
-    object-fit: cover; /* Ensures image covers the area without distortion */
-    border: 5px solid #fff;
-    margin-bottom: 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-#hero h2 {
-    font-size: 3em;
-    margin-bottom: 15px;
-}
-
-#hero p {
-    font-size: 1.4em;
-    max-width: 800px;
-    margin: 0 auto 30px;
-    line-height: 1.8;
-}
-
-.btn {
-    display: inline-block;
-    background: #28a745; /* Green button */
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    transition: background 0.3s ease;
-}
-
-.btn:hover {
-    background: #218838; /* Darker green on hover */
-}
-
-/* Sections */
-section {
-    padding: 60px 0;
-}
-
-section h3 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    color: #0056b3; /* Blue heading */
-    position: relative;
-}
-
-section h3::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: #0779e4;
-    margin: 10px auto 0;
-    border-radius: 2px;
-}
-
-.bg-light {
-    background-color: #e9e9e9;
-}
-
-/* About Section */
-#about p {
-    text-align: justify;
-    font-size: 1.1em;
-    margin-bottom: 15px;
-}
-
-/* Skills Section */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    text-align: left;
-}
-
-.skill-item {
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skill-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-.skill-item h4 {
-    color: #007bff;
-    margin-bottom: 15px;
-    font-size: 1.6em;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-}
-
-.skill-item ul {
-    list-style: none;
-    padding: 0;
-}
-
-.skill-item ul li {
-    background: #eaf7ff;
-    margin-bottom: 8px;
-    padding: 10px 15px;
-    border-radius: 4px;
-    font-size: 1.05em;
-    color: #0056b3;
-}
-
-/* Experience Section (Timeline) */
-.timeline {
-    position: relative;
-    padding: 20px 0;
-    margin-top: 30px;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: #ccc;
-    transform: translateX(-50%);
-}
-
-.timeline-item {
-    position: relative;
-    width: 50%;
-    padding: 20px 40px;
-    box-sizing: border-box;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-}
-
-.timeline-item:nth-child(odd) {
-    left: 0;
-    text-align: right;
-    transform: translateX(-10px);
-}
-
-.timeline-item:nth-child(even) {
-    left: 50%;
-    text-align: left;
-    transform: translateX(10px);
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background: #0779e4;
-    border-radius: 50%;
-    top: 25px;
-    z-index: 1;
-    border: 3px solid #fff;
-}
-
-.timeline-item:nth-child(odd)::before {
-    right: -8px;
-}
-
-.timeline-item:nth-child(even)::before {
-    left: -8px;
-}
-
-.timeline-item h4 {
-    color: #007bff;
-    font-size: 1.5em;
-    margin-bottom: 5px;
-}
-
-.timeline-date {
-    font-style: italic;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.timeline-item ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.timeline-item:nth-child(odd) ul {
-    padding-right: 20px;
-    padding-left: 0;
-    list-style-position: inside;
-}
-
-
-/* Contact Section */
-#contact p {
-    text-align: center;
-    font-size: 1.1em;
-    margin-bottom: 25px;
-}
-
-.contact-links {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.contact-btn {
-    display: inline-block;
-    background: #6c757d; /* Grey button */
-    color: #fff;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: 0 10px;
-    font-size: 1.1em;
-    transition: background 0.3s ease;
-}
-
-.contact-btn:hover {
-    background: #5a6268; /* Darker grey on hover */
-}
-
-.note {
-    font-size: 0.9em;
-    color: #888;
-    margin-top: 20px;
-}
-
-/* Footer */
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 25px 0;
-    margin-top: 30px;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-        padding: 10px;
-    }
-
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        align-items: center;
-        padding-top: 10px;
-    }
-
-    header nav li {
-        margin: 5px 0;
-    }
-
-    #hero h2 {
-        font-size: 2.2em;
-    }
-
-    #hero p {
-        font-size: 1.1em;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .timeline::before {
-        left: 20px; /* Adjust line position for smaller screens */
-    }
-
-    .timeline-item {
-        width: 100%;
-        left: 0 !important; /* Override left positioning */
-        padding: 20px;
-        text-align: left !important; /* Ensure text is left-aligned */
-        transform: translateX(0) !important;
-    }
-
-    .timeline-item::before {
-        left: 10px !important; /* Adjust dot position */
-        right: auto !important;
-    }
-
-    .timeline-item ul {
-        padding-left: 20px; /* Standard padding for lists */
-        list-style-position: outside; /* Ensure bullets are outside */
-    }
-
-    .contact-btn {
-        margin: 10px 5px;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <body>
+  <h1>Chào mừng bạn đến với trang của Thanh Bình!</h1>
+  <p>Trang web đang được xây dựng...</p>
+</body>
+  </head>
+  <div class="main">
+    <form action="" method="POST" class="form" id="form-1">
+      <h3 class="heading">Thành viên đăng ký</h3>
+      <p class="desc">Cùng nhau làm app lỏ ❤️‍🔥😅🤣❤️</p>
+
+      <div class="spacer"></div>
+
+      <div class="form-group">
+        <label for="fullname" class="form-label">Tên đầy đủ của bạn </label>
+        <input
+          id="fullname"
+          name="fullname"
+          type="text"
+          placeholder="VD: Bình master"
+          class="form-control"
+        />
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="text"
+          placeholder="VD: MasterHeino@gmail.com"
+          class="form-control"
+        />
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">Mật khẩu</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Nhập mật khẩu VD:Binh12"
+          class="form-control"
+        />
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="password_confirmation" class="form-label"
+          >Nhập lại mật khẩu</label
+        >
+        <input
+          id="password_confirmation"
+          name="password_confirmation"
+          placeholder="Nhập lại mật khẩu"
+          type="password"
+          class="form-control"
+        />
+        <span class="form-message"></span>
+      </div>
+
+      <button class="form-submit">Đăng ký</button>
+    </form>
+  </div>
+  <script src="./validator.js"></script>
+  <script>
+    Validator({
+      form: "#form-1",
+      errorSelector: ".form-message",
+      rules: [
+        Validator.isRequired("#fullname", "Vui lòng nhập họ tên"),
+        Validator.isEmail("#email"),
+        Validator.isRequired("#password"),
+        Validator.isPassword("#password", 6),
+        Validator.isRequired("#password_confirmation"),
+        Validator.isConfirmed(
+          "#password_confirmation",
+          function () {
+            return document.querySelector("#form-1 #password").value;
+          },
+          "Mật khẩu xác nhận không khớp"
+        ),
+      ],
+    });
+  </script>
+  <body>
+    <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu bản thân - [Tên của bạn]</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> </head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Chào mừng đến với trang cá nhân của tôi</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">Về tôi</a></li>
+                    <li><a href="#skills">Kỹ năng</a></li>
+                    <li><a href="#experience">Kinh nghiệm</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container hero-content">
+                <img src="your-profile-picture.jpg" alt="Ảnh đại diện của bạn" class="profile-img">
+                <h2>Xin chào, tôi là [Tên của bạn]</h2>
+                <p>Tôi là một [Chức danh/Ngành nghề của bạn], đam mê [Sở thích/Lĩnh vực chuyên môn]. Trang này là nơi tôi chia sẻ về bản thân và những gì tôi đang làm.</p>
+                <a href="#contact" class="btn">Liên hệ với tôi</a>
+            </div>
+        </section>
+
+        <section id="about" class="bg-light">
+            <div class="container">
+                <h3>Về tôi</h3>
+                <p>Tôi là một người [mô tả tính cách, ví dụ: năng động, sáng tạo, tỉ mỉ] với [số] năm kinh nghiệm trong lĩnh vực [tên lĩnh vực]. Tôi luôn tìm kiếm cơ hội để học hỏi và phát triển bản thân, mang lại giá trị cho các dự án và tổ chức mà tôi tham gia.</p>
+                <p>Tôi có niềm yêu thích đặc biệt với [một sở thích hoặc lĩnh vực bạn muốn nhấn mạnh, ví dụ: lập trình web, thiết kế đồ họa, marketing số, nghiên cứu khoa học]. Ngoài công việc, tôi thường dành thời gian cho [hoạt động giải trí, ví dụ: đọc sách, chơi thể thao, du lịch].</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h3>Kỹ năng của tôi</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h4>Kỹ năng cứng</h4>
+                        <ul>
+                            <li>[Kỹ năng 1, ví dụ: HTML, CSS, JavaScript]</li>
+                            <li>[Kỹ năng 2, ví dụ: Python, Java, C#]</li>
+                            <li>[Kỹ năng 3, ví dụ: SQL, Git, Docker]</li>
+                            <li>[Kỹ năng 4, ví dụ: Photoshop, Figma, Premiere Pro]</li>
+                        </ul>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Kỹ năng mềm</h4>
+                        <ul>
+                            <li>[Kỹ năng mềm 1, ví dụ: Giải quyết vấn đề]</li>
+                            <li>[Kỹ năng mềm 2, ví dụ: Làm việc nhóm]</li>
+                            <li>[Kỹ năng mềm 3, ví dụ: Giao tiếp]</li>
+                            <li>[Kỹ năng mềm 4, ví dụ: Quản lý thời gian]</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="bg-light">
+            <div class="container">
+                <h3>Kinh nghiệm làm việc & Học vấn</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>[Chức vụ/Vị trí] tại [Tên công ty/Tổ chức]</h4>
+                        <p class="timeline-date">[Tháng/Năm Bắt đầu] - [Tháng/Năm Kết thúc hoặc "Hiện tại"]</p>
+                        <ul>
+                            <li>[Mô tả công việc/thành tựu 1]</li>
+                            <li>[Mô tả công việc/thành tựu 2]</li>
+                            <li>[Mô tả công việc/thành tựu 3]</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>[Tên Bằng cấp] tại [Tên trường Đại học/Cao đẳng]</h4>
+                        <p class="timeline-date">[Năm Bắt đầu] - [Năm Kết thúc]</p>
+                        <ul>
+                            <li>[Mô tả về ngành học/dự án nổi bật nếu có]</li>
+                        </ul>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h3>Liên hệ với tôi</h3>
+                <p>Bạn có thể kết nối với tôi qua:</p>
+                <div class="contact-links">
+                    <a href="mailto:your.email@example.com" class="contact-btn">Email</a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-btn">LinkedIn</a>
+                    <a href="https://github.com/yourusername" target="_blank" class="contact-btn">GitHub</a>
+                    </div>
+                <p class="note">Hoặc điền form nếu bạn có một form liên hệ!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 [Tên của bạn]. Mọi quyền được bảo lưu.</p>
+        </div>
+    </footer>
+</body>
+</html>
+  </body>
+</html>
+
+</html>
