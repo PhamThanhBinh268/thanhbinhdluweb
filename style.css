@@ -114,37 +114,48 @@ html {
   margin-top: 36px;
 }
 
-/* General Body Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    margin: 0;
+//* Global Reset and Base Styles */
+* {
     padding: 0;
-    color: #333;
-    background-color: #f4f4f4;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    color: #333; /* Primary text color from new CSS */
+    font-size: 62.5%; /* 1rem = 10px, for easier scaling */
+    font-family: "Open Sans", sans-serif; /* Font from new CSS */
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f1f1f1; /* Background from new .main */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    overflow-x: hidden; /* Prevent horizontal scroll on small screens */
 }
 
 .container {
-    width: 80%;
+    width: 90%; /* Adjusted for better responsiveness */
+    max-width: 1200px; /* Max width for large screens */
     margin: auto;
-    overflow: hidden; /* Clear floats */
-    padding: 20px 0;
+    padding: 2.4rem 0; /* Converted from 24px */
 }
 
 /* Header */
 header {
     background: #333;
     color: #fff;
-    padding-top: 20px;
-    min-height: 70px;
-    border-bottom: #0779e4 3px solid;
+    padding-top: 2rem; /* Converted from 20px */
+    min-height: 7rem; /* Converted from 70px */
+    border-bottom: #1dbfaf 0.3rem solid; /* Color from new CSS, converted 3px */
     text-align: center;
 }
 
 header h1 {
     margin: 0;
-    padding-bottom: 10px;
-    font-size: 2.2em;
+    padding-bottom: 1rem; /* Converted from 10px */
+    font-size: 2.8rem; /* Adjusted for rem, slightly larger */
+    font-weight: 600; /* Adjusted font-weight */
 }
 
 header nav ul {
@@ -155,133 +166,143 @@ header nav ul {
 }
 
 header nav li {
-    margin: 0 15px;
+    margin: 0 1.5rem; /* Converted from 15px */
 }
 
 header a {
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 1.1em;
+    font-size: 1.4rem; /* Converted from 1.1em */
+    font-weight: 400;
 }
 
 header a:hover {
-    color: #0779e4;
+    color: #1dbfaf; /* Highlight color from new CSS */
 }
 
 /* Hero Section */
 #hero {
-    background: #0056b3; /* Darker blue background */
+    background: #1dbfaf; /* Primary color from new CSS */
     color: #fff;
-    padding: 80px 0;
+    padding: 8rem 0; /* Converted from 80px */
     text-align: center;
     position: relative;
-    overflow: hidden; /* For any potential background effects */
+    overflow: hidden;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2; /* Ensure content is above any background effects */
+    z-index: 2;
 }
 
 .profile-img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%; /* Makes it round */
-    object-fit: cover; /* Ensures image covers the area without distortion */
-    border: 5px solid #fff;
-    margin-bottom: 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 18rem; /* Converted from 180px */
+    height: 18rem; /* Converted from 180px */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.5rem solid #fff; /* Converted from 5px */
+    margin-bottom: 2.5rem; /* Converted from 25px */
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3); /* Converted from 0 5px 15px */
 }
 
 #hero h2 {
-    font-size: 3em;
-    margin-bottom: 15px;
+    font-size: 4rem; /* Adjusted for rem, larger impact */
+    margin-bottom: 1.5rem; /* Converted from 15px */
+    font-weight: 700; /* Bold */
 }
 
 #hero p {
-    font-size: 1.4em;
-    max-width: 800px;
-    margin: 0 auto 30px;
+    font-size: 1.8rem; /* Converted from 1.4em */
+    max-width: 80rem; /* Converted from 800px */
+    margin: 0 auto 3rem; /* Converted from 30px */
     line-height: 1.8;
+    font-weight: 300; /* Lighter */
 }
 
 .btn {
     display: inline-block;
-    background: #28a745; /* Green button */
+    background: #1dbfaf; /* Primary color */
     color: #fff;
-    padding: 15px 30px;
+    padding: 1.5rem 3rem; /* Converted from 15px 30px */
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2em;
+    border-radius: 0.8rem; /* Converted from 5px, using 8px from form-submit */
+    font-size: 1.6rem; /* Converted from 1.2em */
+    font-weight: 600; /* From form-submit */
     transition: background 0.3s ease;
+    border: none; /* From form-submit */
+    cursor: pointer; /* From form-submit */
 }
 
 .btn:hover {
-    background: #218838; /* Darker green on hover */
+    background: #1ac7b6; /* Darker hover from form-submit */
 }
 
 /* Sections */
 section {
-    padding: 60px 0;
+    padding: 6rem 0; /* Converted from 60px */
 }
 
 section h3 {
     text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    color: #0056b3; /* Blue heading */
+    font-size: 3.2rem; /* Adjusted for rem, larger */
+    margin-bottom: 4rem; /* Converted from 40px */
+    color: #333; /* Primary text color */
     position: relative;
+    font-weight: 700; /* Bold */
 }
 
 section h3::after {
     content: '';
     display: block;
-    width: 60px;
-    height: 3px;
-    background: #0779e4;
-    margin: 10px auto 0;
-    border-radius: 2px;
+    width: 6rem; /* Converted from 60px */
+    height: 0.3rem; /* Converted from 3px */
+    background: #1dbfaf; /* Highlight color */
+    margin: 1rem auto 0; /* Converted from 10px */
+    border-radius: 0.2rem; /* Converted from 2px */
 }
 
 .bg-light {
-    background-color: #e9e9e9;
+    background-color: #e9e9e9; /* Kept existing light background */
 }
 
 /* About Section */
 #about p {
     text-align: justify;
-    font-size: 1.1em;
-    margin-bottom: 15px;
+    font-size: 1.6rem; /* Converted from 1.1em */
+    margin-bottom: 1.5rem; /* Converted from 15px */
+    font-weight: 300; /* Lighter */
+    color: #636d77; /* Desc color from new CSS */
 }
 
 /* Skills Section */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr)); /* Converted from 280px */
+    gap: 3rem; /* Converted from 30px */
     text-align: left;
 }
 
 .skill-item {
     background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 3.2rem; /* Converted from 30px, using 32px from form */
+    border-radius: 0.2rem; /* Converted from 8px, using 2px from form */
+    box-shadow: 0 0.2rem 0.5rem 0 rgba(51, 62, 73, 0.1); /* From new .form */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-0.5rem); /* Converted from -5px */
+    box-shadow: 0 0.4rem 1rem rgba(51, 62, 73, 0.15); /* Slightly stronger hover shadow */
 }
 
 .skill-item h4 {
-    color: #007bff;
-    margin-bottom: 15px;
-    font-size: 1.6em;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+    color: #1dbfaf; /* Highlight color */
+    margin-bottom: 1.5rem; /* Converted from 15px */
+    font-size: 2rem; /* Converted from 1.6em */
+    border-bottom: 0.1rem solid #eee; /* Converted from 1px */
+    padding-bottom: 1rem; /* Converted from 10px */
+    font-weight: 600;
 }
 
 .skill-item ul {
@@ -290,19 +311,20 @@ section h3::after {
 }
 
 .skill-item ul li {
-    background: #eaf7ff;
-    margin-bottom: 8px;
-    padding: 10px 15px;
-    border-radius: 4px;
-    font-size: 1.05em;
-    color: #0056b3;
+    background: #eaf7ff; /* Kept existing light blue */
+    margin-bottom: 0.8rem; /* Converted from 8px */
+    padding: 1rem 1.5rem; /* Converted from 10px 15px */
+    border-radius: 0.4rem; /* Converted from 4px */
+    font-size: 1.5rem; /* Converted from 1.05em */
+    color: #0056b3; /* Kept existing blue */
+    font-weight: 300;
 }
 
 /* Experience Section (Timeline) */
 .timeline {
     position: relative;
-    padding: 20px 0;
-    margin-top: 30px;
+    padding: 2rem 0; /* Converted from 20px */
+    margin-top: 3rem; /* Converted from 30px */
 }
 
 .timeline::before {
@@ -310,7 +332,7 @@ section h3::after {
     position: absolute;
     left: 50%;
     top: 0;
-    width: 4px;
+    width: 0.4rem; /* Converted from 4px */
     height: 100%;
     background: #ccc;
     transform: translateX(-50%);
@@ -319,92 +341,101 @@ section h3::after {
 .timeline-item {
     position: relative;
     width: 50%;
-    padding: 20px 40px;
+    padding: 2rem 4rem; /* Converted from 20px 40px */
     box-sizing: border-box;
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+    border-radius: 0.2rem; /* Converted from 8px, using 2px from form */
+    box-shadow: 0 0.2rem 0.5rem 0 rgba(51, 62, 73, 0.1); /* From new .form */
+    margin-bottom: 3rem; /* Converted from 30px */
 }
 
 .timeline-item:nth-child(odd) {
     left: 0;
     text-align: right;
-    transform: translateX(-10px);
+    transform: translateX(-1rem); /* Converted from -10px */
 }
 
 .timeline-item:nth-child(even) {
     left: 50%;
     text-align: left;
-    transform: translateX(10px);
+    transform: translateX(1rem); /* Converted from 10px */
 }
 
 .timeline-item::before {
     content: '';
     position: absolute;
-    width: 16px;
-    height: 16px;
-    background: #0779e4;
+    width: 1.6rem; /* Converted from 16px */
+    height: 1.6rem; /* Converted from 16px */
+    background: #1dbfaf; /* Highlight color */
     border-radius: 50%;
-    top: 25px;
+    top: 2.5rem; /* Converted from 25px */
     z-index: 1;
-    border: 3px solid #fff;
+    border: 0.3rem solid #f1f1f1; /* Converted from 3px, using body background */
 }
 
 .timeline-item:nth-child(odd)::before {
-    right: -8px;
+    right: -0.8rem; /* Converted from -8px */
 }
 
 .timeline-item:nth-child(even)::before {
-    left: -8px;
+    left: -0.8rem; /* Converted from -8px */
 }
 
 .timeline-item h4 {
-    color: #007bff;
-    font-size: 1.5em;
-    margin-bottom: 5px;
+    color: #1dbfaf; /* Highlight color */
+    font-size: 1.8rem; /* Converted from 1.5em */
+    margin-bottom: 0.5rem; /* Converted from 5px */
+    font-weight: 600;
 }
 
 .timeline-date {
     font-style: italic;
-    color: #666;
-    margin-bottom: 10px;
+    color: #636d77; /* Desc color from new CSS */
+    margin-bottom: 1rem; /* Converted from 10px */
+    font-size: 1.4rem;
 }
 
 .timeline-item ul {
     list-style-type: disc;
-    padding-left: 20px;
+    padding-left: 2rem; /* Converted from 20px */
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #636d77;
 }
 
 .timeline-item:nth-child(odd) ul {
-    padding-right: 20px;
+    padding-right: 2rem; /* Converted from 20px */
     padding-left: 0;
     list-style-position: inside;
 }
 
-
 /* Contact Section */
 #contact p {
     text-align: center;
-    font-size: 1.1em;
-    margin-bottom: 25px;
+    font-size: 1.6rem; /* Converted from 1.1em */
+    margin-bottom: 2.5rem; /* Converted from 25px */
+    font-weight: 300;
+    color: #636d77;
 }
 
 .contact-links {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 3rem; /* Converted from 30px */
 }
 
 .contact-btn {
     display: inline-block;
     background: #6c757d; /* Grey button */
     color: #fff;
-    padding: 12px 25px;
+    padding: 1.2rem 2.5rem; /* Converted from 12px 25px */
     text-decoration: none;
-    border-radius: 5px;
-    margin: 0 10px;
-    font-size: 1.1em;
+    border-radius: 0.8rem; /* Converted from 5px, using 8px from form-submit */
+    margin: 0 1rem; /* Converted from 0 10px */
+    font-size: 1.4rem; /* Converted from 1.1em */
+    font-weight: 600;
     transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .contact-btn:hover {
@@ -412,9 +443,10 @@ section h3::after {
 }
 
 .note {
-    font-size: 0.9em;
+    font-size: 1.2rem; /* Converted from 0.9em */
     color: #888;
-    margin-top: 20px;
+    margin-top: 2rem; /* Converted from 20px */
+    font-weight: 300;
 }
 
 /* Footer */
@@ -422,41 +454,43 @@ footer {
     background: #333;
     color: #fff;
     text-align: center;
-    padding: 25px 0;
-    margin-top: 30px;
+    padding: 2.5rem 0; /* Converted from 25px */
+    margin-top: 3rem; /* Converted from 30px */
 }
 
 footer p {
     margin: 0;
+    font-size: 1.4rem;
+    font-weight: 300;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 76.8rem) { /* Converted from 768px */
     .container {
         width: 95%;
-        padding: 10px;
+        padding: 1rem; /* Converted from 10px */
     }
 
     header h1 {
-        font-size: 1.8em;
+        font-size: 2.2rem; /* Converted from 1.8em */
     }
 
     header nav ul {
         flex-direction: column;
         align-items: center;
-        padding-top: 10px;
+        padding-top: 1rem; /* Converted from 10px */
     }
 
     header nav li {
-        margin: 5px 0;
+        margin: 0.5rem 0; /* Converted from 5px */
     }
 
     #hero h2 {
-        font-size: 2.2em;
+        font-size: 3rem; /* Converted from 2.2em */
     }
 
     #hero p {
-        font-size: 1.1em;
+        font-size: 1.6rem; /* Converted from 1.1em */
     }
 
     .skills-grid {
@@ -464,28 +498,28 @@ footer p {
     }
 
     .timeline::before {
-        left: 20px; /* Adjust line position for smaller screens */
+        left: 2rem; /* Converted from 20px */
     }
 
     .timeline-item {
         width: 100%;
-        left: 0 !important; /* Override left positioning */
-        padding: 20px;
-        text-align: left !important; /* Ensure text is left-aligned */
+        left: 0 !important;
+        padding: 2rem; /* Converted from 20px */
+        text-align: left !important;
         transform: translateX(0) !important;
     }
 
     .timeline-item::before {
-        left: 10px !important; /* Adjust dot position */
+        left: 1rem !important; /* Converted from 10px */
         right: auto !important;
     }
 
     .timeline-item ul {
-        padding-left: 20px; /* Standard padding for lists */
-        list-style-position: outside; /* Ensure bullets are outside */
+        padding-left: 2rem; /* Converted from 20px */
+        list-style-position: outside;
     }
 
     .contact-btn {
-        margin: 10px 5px;
+        margin: 1rem 0.5rem; /* Converted from 10px 5px */
     }
 }
