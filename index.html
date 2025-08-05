@@ -1,215 +1,206 @@
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./style.css" />
-    <body>
-  <h1>Chào mừng bạn đến với trang của Thanh Bình!</h1>
-  <p>Trang web đang được xây dựng...</p>
-</body>
-  </head>
-  <div class="main">
-    <form action="" method="POST" class="form" id="form-1">
-      <h3 class="heading">Thành viên đăng ký</h3>
-      <p class="desc">Cùng nhau làm app lỏ ❤️‍🔥😅🤣❤️</p>
-
-      <div class="spacer"></div>
-
-      <div class="form-group">
-        <label for="fullname" class="form-label">Tên đầy đủ của bạn </label>
-        <input
-          id="fullname"
-          name="fullname"
-          type="text"
-          placeholder="VD: Bình master"
-          class="form-control"
-        />
-        <span class="form-message"></span>
-      </div>
-
-      <div class="form-group">
-        <label for="email" class="form-label">Email</label>
-        <input
-          id="email"
-          name="email"
-          type="text"
-          placeholder="VD: MasterHeino@gmail.com"
-          class="form-control"
-        />
-        <span class="form-message"></span>
-      </div>
-
-      <div class="form-group">
-        <label for="password" class="form-label">Mật khẩu</label>
-        <input
-          id="password"
-          name="password"
-          type="password"
-          placeholder="Nhập mật khẩu VD:Binh12"
-          class="form-control"
-        />
-        <span class="form-message"></span>
-      </div>
-
-      <div class="form-group">
-        <label for="password_confirmation" class="form-label"
-          >Nhập lại mật khẩu</label
-        >
-        <input
-          id="password_confirmation"
-          name="password_confirmation"
-          placeholder="Nhập lại mật khẩu"
-          type="password"
-          class="form-control"
-        />
-        <span class="form-message"></span>
-      </div>
-
-      <button class="form-submit">Đăng ký</button>
-    </form>
-  </div>
-  <script src="./validator.js"></script>
-  <script>
-    Validator({
-      form: "#form-1",
-      errorSelector: ".form-message",
-      rules: [
-        Validator.isRequired("#fullname", "Vui lòng nhập họ tên"),
-        Validator.isEmail("#email"),
-        Validator.isRequired("#password"),
-        Validator.isPassword("#password", 6),
-        Validator.isRequired("#password_confirmation"),
-        Validator.isConfirmed(
-          "#password_confirmation",
-          function () {
-            return document.querySelector("#form-1 #password").value;
-          },
-          "Mật khẩu xác nhận không khớp"
-        ),
-      ],
-    });
-  </script>
-  <body>
-    <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới thiệu bản thân - [Tên của bạn]</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> </head>
+    <title>CV CNTT - Phạm Thanh Bình</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #1e88e5;
+            text-align: center;
+            font-size: 32px;
+            text-transform: uppercase;
+            border-bottom: 3px solid #1e88e5;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .slogan {
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #1565c0;
+            font-size: 22px;
+            margin-top: 20px;
+            border-left: 4px solid #1e88e5;
+            padding-left: 10px;
+        }
+        p, li {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+        ul li::before {
+            content: "▹";
+            color: #1e88e5;
+            position: absolute;
+            left: 0;
+        }
+        .highlight {
+            color: #d81b60;
+            font-weight: bold;
+        }
+        .contact {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .skill-item {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 26px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Chào mừng đến với trang cá nhân của tôi</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">Về tôi</a></li>
-                    <li><a href="#skills">Kỹ năng</a></li>
-                    <li><a href="#experience">Kinh nghiệm</a></li>
-                    <li><a href="#contact">Liên hệ</a></li>
-                </ul>
-            </nav>
+    <div class="container">
+        <h1>CV CNTT - Phạm Thanh Bình</h1>
+        <p class="slogan">"Code sạch, sống xanh, tương lai sáng!"</p>
+        
+        <div class="section">
+            <h2>Thông Tin Cá Nhân</h2>
+            <ul>
+                <li><span class="highlight">Họ và tên:</span> Phạm Thanh Bình</li>
+                <li><span class="highlight">Ngày sinh:</span> 01/01/1995</li>
+                <li><span class="highlight">Quê quán:</span> Hưng Yên, Việt Nam</li>
+                <li><span class="highlight">SĐT:</span> 090xxxxxxx</li>
+                <li><span class="highlight">Email:</span> binh.pham.it@gmail.com</li>
+                <li><span class="highlight">GitHub:</span> github.com/thanhbinh95</li>
+                <li><span class="highlight">LinkedIn:</span> linkedin.com/in/thanhbinhpham</li>
+            </ul>
         </div>
-    </header>
 
-    <main>
-        <section id="hero">
-            <div class="container hero-content">
-                <img src="your-profile-picture.jpg" alt="Ảnh đại diện của bạn" class="profile-img">
-                <h2>Xin chào, tôi là [Tên của bạn]</h2>
-                <p>Tôi là một [Chức danh/Ngành nghề của bạn], đam mê [Sở thích/Lĩnh vực chuyên môn]. Trang này là nơi tôi chia sẻ về bản thân và những gì tôi đang làm.</p>
-                <a href="#contact" class="btn">Liên hệ với tôi</a>
-            </div>
-        </section>
-
-        <section id="about" class="bg-light">
-            <div class="container">
-                <h3>Về tôi</h3>
-                <p>Tôi là một người [mô tả tính cách, ví dụ: năng động, sáng tạo, tỉ mỉ] với [số] năm kinh nghiệm trong lĩnh vực [tên lĩnh vực]. Tôi luôn tìm kiếm cơ hội để học hỏi và phát triển bản thân, mang lại giá trị cho các dự án và tổ chức mà tôi tham gia.</p>
-                <p>Tôi có niềm yêu thích đặc biệt với [một sở thích hoặc lĩnh vực bạn muốn nhấn mạnh, ví dụ: lập trình web, thiết kế đồ họa, marketing số, nghiên cứu khoa học]. Ngoài công việc, tôi thường dành thời gian cho [hoạt động giải trí, ví dụ: đọc sách, chơi thể thao, du lịch].</p>
-            </div>
-        </section>
-
-        <section id="skills">
-            <div class="container">
-                <h3>Kỹ năng của tôi</h3>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <h4>Kỹ năng cứng</h4>
-                        <ul>
-                            <li>[Kỹ năng 1, ví dụ: HTML, CSS, JavaScript]</li>
-                            <li>[Kỹ năng 2, ví dụ: Python, Java, C#]</li>
-                            <li>[Kỹ năng 3, ví dụ: SQL, Git, Docker]</li>
-                            <li>[Kỹ năng 4, ví dụ: Photoshop, Figma, Premiere Pro]</li>
-                        </ul>
-                    </div>
-                    <div class="skill-item">
-                        <h4>Kỹ năng mềm</h4>
-                        <ul>
-                            <li>[Kỹ năng mềm 1, ví dụ: Giải quyết vấn đề]</li>
-                            <li>[Kỹ năng mềm 2, ví dụ: Làm việc nhóm]</li>
-                            <li>[Kỹ năng mềm 3, ví dụ: Giao tiếp]</li>
-                            <li>[Kỹ năng mềm 4, ví dụ: Quản lý thời gian]</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="bg-light">
-            <div class="container">
-                <h3>Kinh nghiệm làm việc & Học vấn</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h4>[Chức vụ/Vị trí] tại [Tên công ty/Tổ chức]</h4>
-                        <p class="timeline-date">[Tháng/Năm Bắt đầu] - [Tháng/Năm Kết thúc hoặc "Hiện tại"]</p>
-                        <ul>
-                            <li>[Mô tả công việc/thành tựu 1]</li>
-                            <li>[Mô tả công việc/thành tựu 2]</li>
-                            <li>[Mô tả công việc/thành tựu 3]</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <h4>[Tên Bằng cấp] tại [Tên trường Đại học/Cao đẳng]</h4>
-                        <p class="timeline-date">[Năm Bắt đầu] - [Năm Kết thúc]</p>
-                        <ul>
-                            <li>[Mô tả về ngành học/dự án nổi bật nếu có]</li>
-                        </ul>
-                    </div>
-                    </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="container">
-                <h3>Liên hệ với tôi</h3>
-                <p>Bạn có thể kết nối với tôi qua:</p>
-                <div class="contact-links">
-                    <a href="mailto:your.email@example.com" class="contact-btn">Email</a>
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-btn">LinkedIn</a>
-                    <a href="https://github.com/yourusername" target="_blank" class="contact-btn">GitHub</a>
-                    </div>
-                <p class="note">Hoặc điền form nếu bạn có một form liên hệ!</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 [Tên của bạn]. Mọi quyền được bảo lưu.</p>
+        <div class="section">
+            <h2>Mục Tiêu Nghề Nghiệp</h2>
+            <ul>
+                <li>Trở thành lập trình viên full-stack xuất sắc, đóng góp vào các dự án CNTT sáng tạo.</li>
+                <li>Xây dựng các ứng dụng tối ưu, thân thiện với người dùng, đạt hiệu suất cao.</li>
+                <li>Học hỏi công nghệ mới, đặc biệt trong AI và DevOps, để luôn dẫn đầu xu hướng.</li>
+            </ul>
         </div>
-    </footer>
+
+        <div class="section">
+            <h2>Học Vấn</h2>
+            <ul>
+                <li><span class="highlight">Cử nhân CNTT</span> – Đại học Công nghệ, ĐHQGHN (2013-2017)</li>
+                <li><span class="highlight">Chứng chỉ:</span> AWS Certified Solutions Architect (2023)</li>
+                <li><span class="highlight">Khóa học:</span> Full-Stack Web Development – Udemy (2022)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Kinh Nghiệm Làm Việc</h2>
+            <ul>
+                <li><span class="highlight">Lập trình viên Backend</span> – Công ty ABC Tech (2019-2023)
+                    <ul>
+                        <li>Phát triển API RESTful với Node.js và Express, tối ưu hóa hiệu suất 30%.</li>
+                        <li>Quản lý cơ sở dữ liệu MySQL và MongoDB cho hệ thống quản lý khách hàng.</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">Thực tập sinh CNTT</span> – Công ty XYZ Soft (2017-2018)
+                    <ul>
+                        <li>Hỗ trợ phát triển ứng dụng web với React và PHP.</li>
+                        <li>Tham gia kiểm thử và bảo trì mã nguồn.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Kỹ Năng</h2>
+            <div class="skills-grid">
+                <div class="skill-item">JavaScript (React, Node.js)</div>
+                <div class="skill-item">Python (Django, Flask)</div>
+                <div class="skill-item">SQL & NoSQL (MySQL, MongoDB)</div>
+                <div class="skill-item">Docker & Kubernetes</div>
+                <div class="skill-item">Git & CI/CD</div>
+                <div class="skill-item">AWS Cloud Services</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Dự Án Nổi Bật</h2>
+            <ul>
+                <li><span class="highlight">Hệ thống quản lý bán hàng</span> (2022)
+                    <ul>
+                        <li>Xây dựng ứng dụng web full-stack với React và Node.js.</li>
+                        <li>Tích hợp thanh toán trực tuyến, tăng 20% hiệu quả giao dịch.</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">Chatbot AI</span> (2021)
+                    <ul>
+                        <li>Phát triển chatbot tự động trả lời khách hàng bằng Python và TensorFlow.</li>
+                        <li>Triển khai trên AWS, giảm 50% thời gian phản hồi.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section contact">
+            <h2>Liên Hệ</h2>
+            <p>Mời bạn "commit" cơ hội làm việc cùng Bình! Email: <span class="highlight">binh.pham.it@gmail.com</span> hoặc SĐT: <span class="highlight">090xxxxxxx</span>.</p>
+            <p><em>P/S: Code của Bình luôn sạch, tâm hồn cũng thế!</em></p>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 Phạm Thanh Bình - Lập trình viên đam mê sáng tạo</p>
+        </div>
+    </div>
 </body>
-</html>
-  </body>
-</html>
-
 </html>
