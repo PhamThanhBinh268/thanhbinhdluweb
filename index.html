@@ -3,204 +3,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV CNTT - Phạm Thanh Bình</title>
+    <title>Phạm Thanh Bình - Portfolio</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #f0f2f5;
+        * {
             margin: 0;
-            padding: 20px;
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
+
+        body {
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Animated Gradient Background */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #1e88e5, #d81b60, #43a047, #ffb300);
+            background-size: 400%;
+            animation: gradient 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
-        h1 {
-            color: #1e88e5;
+
+        header {
             text-align: center;
-            font-size: 32px;
-            text-transform: uppercase;
-            border-bottom: 3px solid #1e88e5;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
+            padding: 50px 20px;
         }
-        .slogan {
-            text-align: center;
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .avatar:hover {
+            transform: scale(1.1);
+        }
+
+        header h1 {
+            font-size: 48px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p.slogan {
+            font-size: 20px;
             font-style: italic;
-            color: #555;
+            color: #f0f0f0;
+            margin-top: 10px;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
             font-size: 18px;
-            margin-bottom: 20px;
+            transition: color 0.3s;
         }
+
+        nav a:hover {
+            color: #ffb300;
+        }
+
+        section {
+            padding: 60px 20px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.5s ease;
+        }
+
+        section:hover {
+            transform: translateY(-10px);
+        }
+
         h2 {
-            color: #1565c0;
-            font-size: 22px;
-            margin-top: 20px;
-            border-left: 4px solid #1e88e5;
-            padding-left: 10px;
-        }
-        p, li {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        .section {
+            font-size: 28px;
+            color: #ffb300;
             margin-bottom: 20px;
         }
+
+        p, ul li {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
         ul {
-            list-style-type: none;
-            padding-left: 0;
+            list-style: none;
         }
+
         ul li {
-            padding: 8px 0;
+            padding: 10px 0;
             position: relative;
-            padding-left: 20px;
+            padding-left: 25px;
         }
+
         ul li::before {
             content: "▹";
-            color: #1e88e5;
+            color: #ffb300;
             position: absolute;
             left: 0;
         }
-        .highlight {
-            color: #d81b60;
-            font-weight: bold;
-        }
-        .contact {
-            background-color: #e3f2fd;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
+
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
         }
+
         .skill-item {
-            background-color: #f5f5f5;
-            padding: 10px;
-            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.05);
+        }
+
+        .contact {
             text-align: center;
         }
+
+        .contact a {
+            color: #ffb300;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
         .footer {
             text-align: center;
-            margin-top: 30px;
+            padding: 20px;
             font-size: 14px;
-            color: #777;
+            color: #ddd;
         }
-        @media (max-width: 600px) {
-            .container {
-                padding: 15px;
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 36px;
             }
-            h1 {
-                font-size: 26px;
+
+            .avatar {
+                width: 120px;
+                height: 120px;
             }
-            h2 {
-                font-size: 20px;
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
             }
-            .skills-grid {
-                grid-template-columns: 1fr;
+
+            section {
+                padding: 40px 15px;
             }
         }
     </style>
 </head>
 <body>
+    <div class="background"></div>
     <div class="container">
-        <h1>CV CNTT - Phạm Thanh Bình</h1>
-        <p class="slogan">"Code sạch, sống xanh, tương lai sáng!"</p>
-        
-        <div class="section">
-            <h2>Thông Tin Cá Nhân</h2>
-            <ul>
-                <li><span class="highlight">Họ và tên:</span> Phạm Thanh Bình</li>
-                <li><span class="highlight">Ngày sinh:</span> 01/01/1995</li>
-                <li><span class="highlight">Quê quán:</span> Hưng Yên, Việt Nam</li>
-                <li><span class="highlight">SĐT:</span> 090xxxxxxx</li>
-                <li><span class="highlight">Email:</span> binh.pham.it@gmail.com</li>
-                <li><span class="highlight">GitHub:</span> github.com/thanhbinh95</li>
-                <li><span class="highlight">LinkedIn:</span> linkedin.com/in/thanhbinhpham</li>
-            </ul>
-        </div>
+        <header>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Phạm Thanh Bình" class="avatar">
+            <h1>Phạm Thanh Bình</h1>
+            <p class="slogan">"Code sạch, sống xanh, tương lai sáng!"</p>
+        </header>
 
-        <div class="section">
-            <h2>Mục Tiêu Nghề Nghiệp</h2>
+        <nav>
             <ul>
-                <li>Trở thành lập trình viên full-stack xuất sắc, đóng góp vào các dự án CNTT sáng tạo.</li>
-                <li>Xây dựng các ứng dụng tối ưu, thân thiện với người dùng, đạt hiệu suất cao.</li>
-                <li>Học hỏi công nghệ mới, đặc biệt trong AI và DevOps, để luôn dẫn đầu xu hướng.</li>
+                <li><a href="#about">Giới Thiệu</a></li>
+                <li><a href="#skills">Kỹ Năng</a></li>
+                <li><a href="#experience">Kinh Nghiệm</a></li>
+                <li><a href="#projects">Dự Án</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>
             </ul>
-        </div>
+        </nav>
 
-        <div class="section">
-            <h2>Học Vấn</h2>
+        <section id="about">
+            <h2>Giới Thiệu</h2>
+            <p>Xin chào! Mình là Phạm Thanh Bình, một lập trình viên đam mê CNTT với 5+ năm kinh nghiệm. Mình yêu thích việc xây dựng các ứng dụng tối ưu, thân thiện và luôn sẵn sàng học hỏi công nghệ mới. Mục tiêu của mình là tạo ra giá trị qua từng dòng code và mang lại nụ cười cho người dùng!</p>
             <ul>
-                <li><span class="highlight">Cử nhân CNTT</span> – Đại học Công nghệ, ĐHQGHN (2013-2017)</li>
-                <li><span class="highlight">Chứng chỉ:</span> AWS Certified Solutions Architect (2023)</li>
-                <li><span class="highlight">Khóa học:</span> Full-Stack Web Development – Udemy (2022)</li>
+                <li><strong>Ngày sinh:</strong> 01/01/1995</li>
+                <li><strong>Quê quán:</strong> Hưng Yên, Việt Nam</li>
+                <li><strong>Email:</strong> binh.pham.it@gmail.com</li>
+                <li><strong>GitHub:</strong> github.com/thanhbinh95</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2>Kinh Nghiệm Làm Việc</h2>
-            <ul>
-                <li><span class="highlight">Lập trình viên Backend</span> – Công ty ABC Tech (2019-2023)
-                    <ul>
-                        <li>Phát triển API RESTful với Node.js và Express, tối ưu hóa hiệu suất 30%.</li>
-                        <li>Quản lý cơ sở dữ liệu MySQL và MongoDB cho hệ thống quản lý khách hàng.</li>
-                    </ul>
-                </li>
-                <li><span class="highlight">Thực tập sinh CNTT</span> – Công ty XYZ Soft (2017-2018)
-                    <ul>
-                        <li>Hỗ trợ phát triển ứng dụng web với React và PHP.</li>
-                        <li>Tham gia kiểm thử và bảo trì mã nguồn.</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-        <div class="section">
+        <section id="skills">
             <h2>Kỹ Năng</h2>
             <div class="skills-grid">
                 <div class="skill-item">JavaScript (React, Node.js)</div>
                 <div class="skill-item">Python (Django, Flask)</div>
                 <div class="skill-item">SQL & NoSQL (MySQL, MongoDB)</div>
                 <div class="skill-item">Docker & Kubernetes</div>
-                <div class="skill-item">Git & CI/CD</div>
                 <div class="skill-item">AWS Cloud Services</div>
+                <div class="skill-item">Git & CI/CD</div>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
+        <section id="experience">
+            <h2>Kinh Nghiệm Làm Việc</h2>
+            <ul>
+                <li><strong>Lập trình viên Backend – ABC Tech (2019-2023)</strong>
+                    <ul>
+                        <li>Phát triển API RESTful với Node.js, cải thiện hiệu suất 30%.</li>
+                        <li>Quản lý cơ sở dữ liệu MySQL và MongoDB.</li>
+                    </ul>
+                </li>
+                <li><strong>Thực tập sinh CNTT – XYZ Soft (2017-2018)</strong>
+                    <ul>
+                        <li>Hỗ trợ phát triển ứng dụng web với React và PHP.</li>
+                        <li>Tham gia kiểm thử và bảo trì mã nguồn.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="projects">
             <h2>Dự Án Nổi Bật</h2>
             <ul>
-                <li><span class="highlight">Hệ thống quản lý bán hàng</span> (2022)
+                <li><strong>Hệ thống quản lý bán hàng (2022)</strong>
                     <ul>
                         <li>Xây dựng ứng dụng web full-stack với React và Node.js.</li>
                         <li>Tích hợp thanh toán trực tuyến, tăng 20% hiệu quả giao dịch.</li>
                     </ul>
                 </li>
-                <li><span class="highlight">Chatbot AI</span> (2021)
+                <li><strong>Chatbot AI (2021)</strong>
                     <ul>
-                        <li>Phát triển chatbot tự động trả lời khách hàng bằng Python và TensorFlow.</li>
+                        <li>Phát triển chatbot tự động trả lời bằng Python và TensorFlow.</li>
                         <li>Triển khai trên AWS, giảm 50% thời gian phản hồi.</li>
                     </ul>
                 </li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section contact">
+        <section id="contact" class="contact">
             <h2>Liên Hệ</h2>
-            <p>Mời bạn "commit" cơ hội làm việc cùng Bình! Email: <span class="highlight">binh.pham.it@gmail.com</span> hoặc SĐT: <span class="highlight">090xxxxxxx</span>.</p>
-            <p><em>P/S: Code của Bình luôn sạch, tâm hồn cũng thế!</em></p>
-        </div>
+            <p>Hãy kết nối với mình để cùng tạo nên những dự án tuyệt vời!</p>
+            <p>Email: <a href="mailto:binh.pham.it@gmail.com">binh.pham.it@gmail.com</a></p>
+            <p>SĐT: <a href="tel:090xxxxxxx">090xxxxxxx</a></p>
+            <p><em>P/S: Code của mình luôn sạch, tâm hồn cũng thế!</em></p>
+        </section>
 
         <div class="footer">
-            <p>© 2025 Phạm Thanh Bình - Lập trình viên đam mê sáng tạo</p>
+            <p>© 2025 Phạm Thanh Bình - Đam mê sáng tạo qua từng dòng code</p>
         </div>
     </div>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>
